@@ -1,36 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loan Calculator — Amortization Schedule, Rate & Term Comparison | Tabutility</title>
-    <meta name="description" content="Free loan calculator with full amortization schedule, rate comparison, term comparison, extra payment simulator, and PDF export. The most complete free loan calculator online. No sign-up." />
-    <meta name="keywords" content="loan calculator, amortization schedule, mortgage calculator, loan amortization, monthly payment calculator, extra payment calculator, loan comparison, free loan calculator, print amortization schedule" />
-    <link rel="canonical" href="https://loan-calculator.tabutility.com/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://loan-calculator.tabutility.com/" />
-    <meta property="og:title" content="Loan Calculator — Amortization, Rate & Term Comparison + PDF Export" />
-    <meta property="og:description" content="The most complete free loan calculator. Amortization schedule, rate comparison, extra payment simulator, and PDF export. No sign-up." />
-    <meta property="og:site_name" content="Tabutility" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Loan Calculator — Amortization, Rate & Term Comparison + PDF Export" />
-    <meta name="twitter:description" content="Free loan calculator with amortization schedule, simulations, and PDF export. No sign-up." />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏦</text></svg>" />
-    <meta name="robots" content="index, follow" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-78VZWJ5B1W');
-    </script>
-    <script type="application/ld+json">
-    { "@context": "https://schema.org", "@type": "WebApplication", "name": "Loan Calculator", "url": "https://loan-calculator.tabutility.com", "description": "Free online loan calculator with full amortization schedule, rate comparison, term comparison, extra payment simulator, and PDF export.", "applicationCategory": "FinanceApplication", "operatingSystem": "Any", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }, "provider": { "@type": "Organization", "name": "Tabutility", "url": "https://tabutility.com" } }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Loan Calculator — Tabutility</title>
+<meta name="description" content="Free loan calculator. Calculate monthly repayments, total interest and amortisation for any loan amount, rate and term."/>
+<meta name="keywords" content="loan calculator, monthly payment calculator, loan repayment calculator, personal loan calculator, interest calculator"/>
+<link rel="canonical" href="https://loan-calculator.tabutility.com/"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💳</text></svg>"/>
+<meta property="og:title" content="Loan Calculator"/>
+<meta property="og:description" content="Calculate monthly repayments, total interest and amortisation for any loan."/>
+<meta property="og:url" content="https://loan-calculator.tabutility.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Tabutility"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Loan Calculator"/>
+<meta name="twitter:description" content="Calculate monthly repayments, total interest and amortisation for any loan."/>
+<meta name="robots" content="index, follow"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-78VZWJ5B1W"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-78VZWJ5B1W');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7039091592734005" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loan Calculator","url":"https://loan-calculator.tabutility.com/","description":"Free loan calculator. Calculate monthly repayments, total interest and amortisation for any loan amount, rate and term.","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"Tabutility","url":"https://tabutility.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tabutility","item":"https://tabutility.com"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://tabutility.com"},{"@type":"ListItem","position":3,"name":"Loan Calculator","item":"https://loan-calculator.tabutility.com/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is my monthly payment calculated?","acceptedAnswer":{"@type":"Answer","text":"Using the standard amortisation formula: P × r(1+r)^n / ((1+r)^n - 1) where P=principal, r=monthly rate, n=number of payments."}},{"@type":"Question","name":"Does this include fees?","acceptedAnswer":{"@type":"Answer","text":"No — enter the APR if you want to include fees in the rate."}},{"@type":"Question","name":"Is the Loan Calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no sign-up needed."}},{"@type":"Question","name":"Does it work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes — works on any device."}}]}</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f172a;color:#f1f5f9;min-height:100vh}
+nav{background:#1e293b;border-bottom:1px solid #334155;padding:14px 24px;display:flex;align-items:center;gap:16px}
+nav a{color:#94a3b8;text-decoration:none;font-size:14px}
+nav a:hover{color:#f1f5f9}
+nav .brand{color:#38bdf8;font-weight:700;font-size:18px}
+.ad-banner{background:#1e293b;border-bottom:1px solid #334155;padding:4px;text-align:center}
+#app{max-width:680px;margin:8px auto;padding:0 16px 40px}
+h1{font-size:26px;font-weight:700;color:#f1f5f9;margin:24px 0 6px;text-align:center}
+.subtitle{color:#94a3b8;font-size:14px;text-align:center;margin-bottom:24px}
+.card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;margin-bottom:16px}
+label{display:block;font-size:13px;font-weight:600;color:#94a3b8;margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;margin-top:16px}
+label:first-of-type{margin-top:0}
+.input-group{position:relative}
+.input-prefix{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:15px;color:#64748b}
+.input-suffix{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:14px;color:#64748b}
+input[type="number"]{width:100%;background:#0f172a;border:1px solid #334155;border-radius:8px;padding:12px 36px 12px 36px;color:#f1f5f9;font-size:16px;outline:none;-moz-appearance:textfield;transition:border-color .2s}
+input[type="number"]:focus{border-color:#38bdf8}
+input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button{-webkit-appearance:none}
+.term-row{display:flex;gap:8px}
+.term-row input{flex:1}
+.term-unit{display:flex;gap:4px}
+.term-btn{padding:10px 14px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#94a3b8;font-size:14px;font-weight:600;cursor:pointer;transition:.2s}
+.term-btn.active{background:#38bdf8;color:#0f172a;border-color:#38bdf8}
+.btn{display:block;width:100%;background:#38bdf8;color:#0f172a;border:none;border-radius:8px;padding:12px 28px;font-size:15px;font-weight:700;cursor:pointer;margin-top:20px;transition:background .2s}
+.btn:hover{background:#0ea5e9}
+.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
+.sum-item{background:#0f172a;border:1px solid #334155;border-radius:10px;padding:14px;text-align:center}
+.sum-item .val{font-size:20px;font-weight:700;color:#38bdf8}
+.sum-item.highlight .val{color:#34d399;font-size:24px}
+.sum-item .lbl{font-size:11px;color:#94a3b8;margin-top:4px;text-transform:uppercase;letter-spacing:.04em}
+.amort-table{width:100%;border-collapse:collapse;font-size:13px}
+.amort-table th{text-align:left;color:#64748b;font-size:11px;font-weight:600;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid #334155}
+.amort-table td{padding:8px 10px;border-bottom:1px solid #1e293b;color:#cbd5e1}
+.amort-table tr:last-child td{border-bottom:none}
+.amort-table td:nth-child(2),.amort-table td:nth-child(3),.amort-table td:nth-child(4),.amort-table td:nth-child(5){text-align:right}
+.hidden{display:none}
+@media(max-width:480px){.summary{grid-template-columns:1fr 1fr}.sum-item.highlight{grid-column:1/-1}}
+</style>
+</head>
+<body>
+<nav><span class="brand">⚡ Tabutility</span><a href="https://tabutility.com">← All Tools</a></nav>
+<div class="ad-banner"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+<div id="app">
+  <h1>💳 Loan Calculator</h1>
+  <p class="subtitle">Calculate monthly repayments, interest and amortisation</p>
+  <div class="card">
+    <label>Loan Amount</label>
+    <div class="input-group">
+      <span class="input-prefix">$</span>
+      <input type="number" id="principal" placeholder="10000" min="0" step="100"/>
+    </div>
+    <label>Annual Interest Rate</label>
+    <div class="input-group">
+      <span class="input-prefix" style="font-size:14px;color:#94a3b8">%</span>
+      <input type="number" id="rate" placeholder="6.5" min="0" max="100" step="0.1"/>
+    </div>
+    <label>Loan Term</label>
+    <div class="term-row">
+      <div class="input-group" style="flex:1">
+        <input type="number" id="term" placeholder="5" min="1" max="360"/>
+      </div>
+      <div class="term-unit">
+        <button class="term-btn active" id="unit-years" onclick="setUnit('years')">Years</button>
+        <button class="term-btn" id="unit-months" onclick="setUnit('months')">Months</button>
+      </div>
+    </div>
+    <button class="btn" onclick="calculate()">Calculate Repayments</button>
+  </div>
+
+  <div id="results" class="hidden">
+    <div class="card">
+      <div class="summary">
+        <div class="sum-item highlight"><div class="val" id="r-monthly">$0</div><div class="lbl">Monthly Payment</div></div>
+        <div class="sum-item"><div class="val" id="r-total">$0</div><div class="lbl">Total Repaid</div></div>
+        <div class="sum-item"><div class="val" id="r-interest">$0</div><div class="lbl">Total Interest</div></div>
+      </div>
+      <div style="font-size:13px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Amortisation — First 12 Months</div>
+      <div style="overflow-x:auto">
+        <table class="amort-table">
+          <thead><tr><th>Month</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th></tr></thead>
+          <tbody id="amort-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:860px;margin-left:auto;margin-right:auto;margin-top:24px;margin-bottom:8px;padding:0 16px">
+  <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 24px">
+    <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px">Related Tools</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
+      <a href="https://mortgage-calculator.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">Mortgage Calculator</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Calculators</div>
+      </a>
+      <a href="https://apr.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">APR Calculator</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Calculators</div>
+      </a>
+      <a href="https://credit-card-payoff-calculator.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">Credit Card Payoff</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Calculators</div>
+      </a>
+      <a href="https://debt-payoff.tabutility.com/" style="display:block;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 16px;text-decoration:none;color:inherit">
+        <div style="font-size:13px;font-weight:600;color:#f1f5f9">Debt Payoff Calculator</div><div style="font-size:11px;color:#94a3b8;margin-top:2px">Calculators</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:860px;margin-left:auto;margin-right:auto;margin-top:8px;margin-bottom:24px;padding:0 16px">
+  <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:20px 24px">
+    <h2 style="font-size:15px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Frequently Asked Questions</h2>
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">How is my monthly payment calculated?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Using the standard amortisation formula: P × r(1+r)^n / ((1+r)^n - 1) where P=principal, r=monthly rate, n=number of payments.</div>
+    </div>
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Does this include fees?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">No — enter the APR if you want to include fees in the rate.</div>
+    </div>
+    <div style="border-bottom:1px solid rgba(255,255,255,0.08);padding:14px 0">
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Is this free?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — completely free, no sign-up needed.</div>
+    </div>
+    <div style="padding:14px 0">
+      <div style="font-size:14px;font-weight:600;color:#f1f5f9;margin-bottom:6px">Works on mobile?</div>
+      <div style="font-size:13px;color:#94a3b8;line-height:1.5">Yes — works on any device.</div>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:8px">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+
+<script>
+let termUnit = 'years';
+function setUnit(u) {
+  termUnit = u;
+  document.getElementById('unit-years').classList.toggle('active', u==='years');
+  document.getElementById('unit-months').classList.toggle('active', u==='months');
+}
+
+function calculate() {
+  const P = parseFloat(document.getElementById('principal').value);
+  const annualRate = parseFloat(document.getElementById('rate').value);
+  const termVal = parseFloat(document.getElementById('term').value);
+  if (!P||!annualRate||!termVal||P<=0||annualRate<0||termVal<=0) { alert('Please fill in all fields with valid values.'); return; }
+
+  const n = termUnit === 'years' ? termVal * 12 : termVal;
+  const r = annualRate / 100 / 12;
+
+  let monthly;
+  if (r === 0) {
+    monthly = P / n;
+  } else {
+    monthly = P * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1);
+  }
+
+  const totalRepaid = monthly * n;
+  const totalInterest = totalRepaid - P;
+
+  document.getElementById('r-monthly').textContent = '$' + monthly.toFixed(2);
+  document.getElementById('r-total').textContent = '$' + totalRepaid.toFixed(2);
+  document.getElementById('r-interest').textContent = '$' + totalInterest.toFixed(2);
+
+  // Amortisation table (first 12 months)
+  const tbody = document.getElementById('amort-body');
+  tbody.innerHTML = '';
+  let balance = P;
+  const showMonths = Math.min(12, n);
+  for (let i = 1; i <= showMonths; i++) {
+    const interestPayment = balance * r;
+    const principalPayment = monthly - interestPayment;
+    balance -= principalPayment;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${i}</td><td>$${monthly.toFixed(2)}</td><td>$${principalPayment.toFixed(2)}</td><td>$${interestPayment.toFixed(2)}</td><td>$${Math.max(0,balance).toFixed(2)}</td>`;
+    tbody.appendChild(tr);
+  }
+
+  document.getElementById('results').classList.remove('hidden');
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
 </html>
