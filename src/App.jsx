@@ -122,7 +122,7 @@ export default function App() {
       <div className="no-print" style={{ background: "#fff", borderBottom: "1px solid #e5e7eb", padding: "16px 24px" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <a href="https://tabutility.com" style={{ fontSize: "15px", fontWeight: "700", color: "#6366f1", textDecoration: "none" }}>⌘ Tabutility</a>
-          <button onClick={handlePrint} style={{ padding: "8px 18px", background: "#0f172a", color: "#fff", border: "none", borderRadius: "8px", fontSize: "13px", fontWeight: "700", cursor: "pointer" }}>
+          <button onClick={handlePrint} style={{ padding: "8px 18px", background: "#f8f7f4", color: "#fff", border: "none", borderRadius: "8px", fontSize: "13px", fontWeight: "700", cursor: "pointer" }}>
             🖨️ Print / Save PDF
           </button>
         </div>
@@ -157,7 +157,7 @@ export default function App() {
 
         {/* ── SECTION 1: CALCULATOR ── */}
         <section id="calculator" style={{ marginBottom: "48px" }}>
-          <h1 style={{ fontSize: "30px", fontWeight: "900", color: "#0f172a", margin: "0 0 6px 0" }}>Loan Calculator</h1>
+          <h1 style={{ fontSize: "30px", fontWeight: "900", color: "#f8f7f4", margin: "0 0 6px 0" }}>Loan Calculator</h1>
           <p style={{ fontSize: "15px", color: "#6b7280", margin: "0 0 28px 0" }}>
             Calculate your monthly payment, see the full repayment breakdown, compare rates and terms, and export to PDF.
           </p>
@@ -269,7 +269,7 @@ export default function App() {
           <section id="amortization" style={{ marginBottom: "48px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px", flexWrap: "wrap", gap: "12px" }}>
               <div>
-                <h2 style={{ fontSize: "22px", fontWeight: "800", color: "#0f172a", margin: "0 0 4px 0" }}>Amortization Schedule</h2>
+                <h2 style={{ fontSize: "22px", fontWeight: "800", color: "#f8f7f4", margin: "0 0 4px 0" }}>Amortization Schedule</h2>
                 <p style={{ margin: 0, fontSize: "14px", color: "#6b7280" }}>Month-by-month breakdown of every payment over {years} years</p>
               </div>
               <button onClick={handlePrint} className="no-print" style={{ padding: "9px 18px", background: "#f3f4f6", border: "1px solid #e5e7eb", borderRadius: "8px", fontSize: "13px", fontWeight: "700", color: "#374151", cursor: "pointer" }}>
@@ -285,7 +285,7 @@ export default function App() {
                   return (
                     <div key={y} style={{ background: "#f9fafb", borderRadius: "10px", padding: "12px", textAlign: "center" }}>
                       <div style={{ fontSize: "11px", fontWeight: "700", color: "#6b7280", textTransform: "uppercase", letterSpacing: "0.04em" }}>Year {y}</div>
-                      <div style={{ fontSize: "16px", fontWeight: "800", color: "#0f172a", marginTop: "4px" }}>${fmtShort(row?.balance || 0)}</div>
+                      <div style={{ fontSize: "16px", fontWeight: "800", color: "#f8f7f4", marginTop: "4px" }}>${fmtShort(row?.balance || 0)}</div>
                       <div style={{ fontSize: "11px", color: "#9ca3af", marginTop: "2px" }}>remaining</div>
                     </div>
                   );
@@ -330,12 +330,12 @@ export default function App() {
         {/* ── SECTION 3: SIMULATIONS ── */}
         {calculated && base && (
           <section id="simulations" style={{ marginBottom: "48px" }}>
-            <h2 style={{ fontSize: "22px", fontWeight: "800", color: "#0f172a", margin: "0 0 4px 0" }}>Simulations</h2>
+            <h2 style={{ fontSize: "22px", fontWeight: "800", color: "#f8f7f4", margin: "0 0 4px 0" }}>Simulations</h2>
             <p style={{ margin: "0 0 24px 0", fontSize: "14px", color: "#6b7280" }}>See how different scenarios affect your total cost</p>
 
             {/* Rate comparison */}
             <div style={{ background: "#fff", borderRadius: "16px", padding: "24px", boxShadow: "0 1px 4px rgba(0,0,0,0.08)", marginBottom: "16px" }}>
-              <h3 style={{ margin: "0 0 16px 0", fontSize: "16px", fontWeight: "800", color: "#0f172a" }}>📊 Rate Comparison</h3>
+              <h3 style={{ margin: "0 0 16px 0", fontSize: "16px", fontWeight: "800", color: "#f8f7f4" }}>📊 Rate Comparison</h3>
               <p style={{ margin: "0 0 16px 0", fontSize: "13px", color: "#6b7280" }}>How ±1% change in rate affects your payments</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "12px" }}>
                 {rateScenarios.map(s => (
@@ -344,7 +344,7 @@ export default function App() {
                       <span style={{ fontSize: "13px", fontWeight: "700", color: s.label === "Current" ? s.color : "#374151" }}>{s.label}</span>
                       <span style={{ fontSize: "13px", fontWeight: "800", color: s.color }}>{s.rate.toFixed(2)}%</span>
                     </div>
-                    <div style={{ fontSize: "22px", fontWeight: "900", color: "#0f172a" }}>${fmt(s.result?.monthly || 0)}<span style={{ fontSize: "12px", color: "#6b7280", fontWeight: "400" }}>/mo</span></div>
+                    <div style={{ fontSize: "22px", fontWeight: "900", color: "#f8f7f4" }}>${fmt(s.result?.monthly || 0)}<span style={{ fontSize: "12px", color: "#6b7280", fontWeight: "400" }}>/mo</span></div>
                     <div style={{ fontSize: "12px", color: "#6b7280", marginTop: "6px" }}>Total interest: ${fmtShort(s.result?.interest || 0)}</div>
                   </div>
                 ))}
@@ -353,13 +353,13 @@ export default function App() {
 
             {/* Term comparison */}
             <div style={{ background: "#fff", borderRadius: "16px", padding: "24px", boxShadow: "0 1px 4px rgba(0,0,0,0.08)", marginBottom: "16px" }}>
-              <h3 style={{ margin: "0 0 6px 0", fontSize: "16px", fontWeight: "800", color: "#0f172a" }}>⏱ Term Comparison</h3>
+              <h3 style={{ margin: "0 0 6px 0", fontSize: "16px", fontWeight: "800", color: "#f8f7f4" }}>⏱ Term Comparison</h3>
               <p style={{ margin: "0 0 16px 0", fontSize: "13px", color: "#6b7280" }}>How a different loan term changes your monthly payment and total cost</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "12px" }}>
                 {/* Current term */}
                 <div style={{ borderRadius: "12px", padding: "18px", border: "2px solid #6366f1", background: "#f5f3ff" }}>
                   <div style={{ fontSize: "13px", fontWeight: "700", color: "#6366f1", marginBottom: "12px" }}>Current — {years}yr</div>
-                  <div style={{ fontSize: "22px", fontWeight: "900", color: "#0f172a" }}>${fmt(base.monthly)}<span style={{ fontSize: "12px", color: "#6b7280", fontWeight: "400" }}>/mo</span></div>
+                  <div style={{ fontSize: "22px", fontWeight: "900", color: "#f8f7f4" }}>${fmt(base.monthly)}<span style={{ fontSize: "12px", color: "#6b7280", fontWeight: "400" }}>/mo</span></div>
                   <div style={{ fontSize: "12px", color: "#6b7280", marginTop: "6px" }}>Total interest: ${fmtShort(base.interest)}</div>
                 </div>
                 {termScenarios.map(s => {
@@ -367,7 +367,7 @@ export default function App() {
                   return (
                     <div key={s.label} style={{ borderRadius: "12px", padding: "18px", border: "1.5px solid #e5e7eb", background: "#f9fafb" }}>
                       <div style={{ fontSize: "13px", fontWeight: "700", color: "#374151", marginBottom: "12px" }}>{s.label}</div>
-                      <div style={{ fontSize: "22px", fontWeight: "900", color: "#0f172a" }}>${fmt(s.result?.monthly || 0)}<span style={{ fontSize: "12px", color: "#6b7280", fontWeight: "400" }}>/mo</span></div>
+                      <div style={{ fontSize: "22px", fontWeight: "900", color: "#f8f7f4" }}>${fmt(s.result?.monthly || 0)}<span style={{ fontSize: "12px", color: "#6b7280", fontWeight: "400" }}>/mo</span></div>
                       <div style={{ fontSize: "12px", marginTop: "6px", color: cheaper ? "#16a34a" : "#dc2626", fontWeight: "600" }}>
                         {cheaper ? "↓" : "↑"} ${fmtShort(Math.abs((s.result?.interest || 0) - base.interest))} interest
                       </div>
@@ -379,7 +379,7 @@ export default function App() {
 
             {/* Extra payment simulation */}
             <div style={{ background: "#fff", borderRadius: "16px", padding: "24px", boxShadow: "0 1px 4px rgba(0,0,0,0.08)" }}>
-              <h3 style={{ margin: "0 0 6px 0", fontSize: "16px", fontWeight: "800", color: "#0f172a" }}>💸 Extra Payment Simulator</h3>
+              <h3 style={{ margin: "0 0 6px 0", fontSize: "16px", fontWeight: "800", color: "#f8f7f4" }}>💸 Extra Payment Simulator</h3>
               <p style={{ margin: "0 0 16px 0", fontSize: "13px", color: "#6b7280" }}>See how much you save by paying more each month</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "12px" }}>
                 {[100, 200, 500].map(e => {
@@ -403,7 +403,7 @@ export default function App() {
 
         {/* ── SECTION 4: RESOURCES ── */}
         <section id="resources" style={{ marginBottom: "48px" }}>
-          <h2 style={{ fontSize: "22px", fontWeight: "800", color: "#0f172a", margin: "0 0 4px 0" }}>Resources & Live Rates</h2>
+          <h2 style={{ fontSize: "22px", fontWeight: "800", color: "#f8f7f4", margin: "0 0 4px 0" }}>Resources & Live Rates</h2>
           <p style={{ margin: "0 0 24px 0", fontSize: "14px", color: "#6b7280" }}>Find current rates and learn more before you commit</p>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "16px", marginBottom: "24px" }}>
@@ -420,7 +420,7 @@ export default function App() {
                 onMouseEnter={e => { e.currentTarget.style.borderColor = "#6366f1"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,0.1)"; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "#e5e7eb"; e.currentTarget.style.boxShadow = "0 1px 4px rgba(0,0,0,0.06)"; }}>
                 <div style={{ fontSize: "24px", marginBottom: "10px" }}>{r.emoji}</div>
-                <div style={{ fontSize: "14px", fontWeight: "700", color: "#0f172a", marginBottom: "4px" }}>{r.title}</div>
+                <div style={{ fontSize: "14px", fontWeight: "700", color: "#f8f7f4", marginBottom: "4px" }}>{r.title}</div>
                 <div style={{ fontSize: "13px", color: "#6b7280", lineHeight: "1.5", marginBottom: "10px" }}>{r.desc}</div>
                 <div style={{ fontSize: "11px", fontWeight: "700", color: "#6366f1", textTransform: "uppercase", letterSpacing: "0.04em" }}>via {r.source} →</div>
               </a>
@@ -429,7 +429,7 @@ export default function App() {
 
           {/* Tips box */}
           <div style={{ background: "#fafafa", border: "1px solid #e5e7eb", borderRadius: "16px", padding: "24px" }}>
-            <h3 style={{ margin: "0 0 16px 0", fontSize: "15px", fontWeight: "800", color: "#0f172a" }}>💡 Tips for Getting a Better Rate</h3>
+            <h3 style={{ margin: "0 0 16px 0", fontSize: "15px", fontWeight: "800", color: "#f8f7f4" }}>💡 Tips for Getting a Better Rate</h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "12px" }}>
               {[
                 { tip: "Check your credit score before applying", detail: "A score above 740 typically gets the best rates." },
@@ -440,7 +440,7 @@ export default function App() {
                 <div key={t.tip} style={{ display: "flex", gap: "10px" }}>
                   <span style={{ fontSize: "16px", flexShrink: 0 }}>✓</span>
                   <div>
-                    <div style={{ fontSize: "13px", fontWeight: "700", color: "#0f172a" }}>{t.tip}</div>
+                    <div style={{ fontSize: "13px", fontWeight: "700", color: "#f8f7f4" }}>{t.tip}</div>
                     <div style={{ fontSize: "12px", color: "#6b7280", marginTop: "2px" }}>{t.detail}</div>
                   </div>
                 </div>
