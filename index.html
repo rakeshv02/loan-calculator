@@ -77,6 +77,7 @@ input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-in
 nav .brand{color:#fff}
 nav a:hover{color:#818cf8}
 input:focus,select:focus,textarea:focus{border-color:#818cf8!important}
+input[type="number"],select,button{min-height:44px;box-sizing:border-box}
 </style>
 
 </head>
@@ -183,17 +184,19 @@ function calculate() {
   const P = parseFloat(document.getElementById('principal').value);
   const annualRate = parseFloat(document.getElementById('rate').value);
   const termVal = parseFloat(document.getElementById('term').value);
-  if (!P||!annualRate||!termVal||P<=0||annualRate<0||termVal<=0) { alert('Please fill in all fields with valid values.'); return; }
+  if (![P, annualRate, termVal].every(Number.isFinite) || P <= 0 || annualRate < 0 || termVal <= 0) { alert('Enter a positive loan and term, and an interest rate of zero or more.'); return; }
 
   const n = termUnit === 'years' ? termVal * 12 : termVal;
+  if (!Number.isInteger(n) || n > 1200) { alert('Enter a term of 1 to 1,200 whole months.'); return; }
   const r = annualRate / 100 / 12;
 
   let monthly;
   if (r === 0) {
     monthly = P / n;
   } else {
-    monthly = P * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1);
+    monthly = P * r / -Math.expm1(-n * Math.log1p(r));
   }
+  if (!Number.isFinite(monthly)) { alert('These inputs produce an amount too large to calculate.'); return; }
 
   const totalRepaid = monthly * n;
   const totalInterest = totalRepaid - P;
@@ -254,7 +257,7 @@ function calculate() {
 </script>
 <footer style="background:#1a1a2e;margin-top:48px;padding:28px 24px;text-align:center;font-family:'Segoe UI',system-ui,Arial,sans-serif;font-size:13px;color:#94a3b8;line-height:1.8">
 <div style="font-weight:700;color:#fff;font-size:15px">⚡ Tabutility</div>
-<div>Free, private, browser-based tools. No sign-up, no tracking.</div>
+<div>Free, browser-based tools. No sign-up. Advertising and analytics are explained in our privacy policy.</div>
 <div style="margin-top:6px"><a href="https://tabutility.com" style="color:#818cf8;font-weight:600;text-decoration:none">All Tools</a> · <a href="https://tabutility.com/blog/" style="color:#94a3b8;text-decoration:none">Blog</a> · <a href="https://tabutility.com/about/" style="color:#94a3b8;text-decoration:none">About</a> · <a href="https://tabutility.com/privacy-policy/" style="color:#94a3b8;text-decoration:none">Privacy</a> · <a href="https://tabutility.com/contact/" style="color:#94a3b8;text-decoration:none">Contact</a></div>
 <div style="margin-top:6px;color:#64748b">© 2026 Tabutility</div>
 
@@ -269,10 +272,10 @@ function calculate() {
         <h3 style="font-size:1.2rem;font-weight:600;color:#f1f5f9;margin-bottom:16px;">📊 Worked Example</h3>
         <p style="color:#94a3b8;margin:0 0 12px;">Borrowing <strong style="color:#f1f5f9;">$25,000 at 7.5% over 5 years</strong>:</p>
         <ul style="list-style:none;padding:0;margin:0;color:#cbd5e1;">
-          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Monthly payment: <strong style="color:#34d399;">$500.92</strong></li>
-          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Total repaid: <strong style="color:#f1f5f9;">$30,055.20</strong></li>
-          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Total interest: <strong style="color:#f87171;">$5,055.20</strong></li>
-          <li style="padding:6px 0;">At 6.5% instead: saves <strong style="color:#34d399;">$716</strong> in interest</li>
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Monthly payment: <strong style="color:#34d399;">$500.95</strong></li>
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Total repaid: <strong style="color:#f1f5f9;">$30,056.92</strong></li>
+          <li style="padding:6px 0;border-bottom:1px solid #1e293b;">Total interest: <strong style="color:#f87171;">$5,056.92</strong></li>
+          <li style="padding:6px 0;">At 6.5% instead: saves about <strong style="color:#34d399;">$707.70</strong> in interest</li>
         </ul>
       </div>
 
